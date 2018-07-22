@@ -1,0 +1,18 @@
+{
+  "name": "web3-event-compatibility",
+  "version": "0.0.1",
+  "description": "This module enables subscription/events with web3 v1.x.x and MetaMask",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/upperwal/web3-event-compatibility.git"
+  },
+  "author": "Abhishek Upperwal",
+  "license": "MIT",
+  "dependencies": {
+    "web3": "^0.20.6"
+  }
+}
