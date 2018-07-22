@@ -7,6 +7,31 @@ It uses two versions of web3.
 2. web3 v1.x (provided by the user) for everything else.
 
 #### Example Usage
+
+```javascript
+var web3 = window.web3
+
+// Checking if Web3 has been injected by the browser (Mist/MetaMask)
+if (typeof web3 !== 'undefined') {
+	// Use Mist/MetaMask's provider.
+	web3 = new Web3(web3.currentProvider)
+
+	// Only using Web3EventCompatibility for injected web3
+	var web3Events = new Web3EventCompatibility(web3, window.web3);
+	web3 = web3Events.web3
+
+	console.log('Injected web3 detected.');
+} else {
+	// Fallback to localhost if no web3 injection. We've configured this to
+	// use the development console's port by default.
+	var provider = new Web3.providers.WebsocketProvider('ws://127.0.0.1:7545')
+
+	web3 = new Web3(provider)
+
+	console.log('No web3 instance injected, using Local web3.');
+}
+```
+
 ```javascript
 myContract.events.MyEvent((error, event) => {
 	console.log(event); 
