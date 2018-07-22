@@ -13,4 +13,4 @@ myContract.events.MyEvent((error, event) => {
 })
 ```
 
-Everything remains same except ```myContract.events.MyEvent``` does not return ```EventEmitter``` hence ```on``` function can not be used (only callback are allowed).
+Everything remains same except ```myContract.events.MyEvent``` does not return ```EventEmitter``` hence ```on``` function can not be used (only callback is allowed).
